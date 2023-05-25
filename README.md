@@ -4,24 +4,24 @@
 
 -   add roles
 
-```js
+```bash
 /role
 ```
 
 -   calculate mathematical expression
 
-```js
+```bash
 /calc 9*9-1
 ```
 
 -   check latency with server
 
-```js
+```bash
 /ping
 ```
 
 -   role a dice
 
-```js
+```bash
 /dice 2
 ```
