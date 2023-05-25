@@ -11,7 +11,7 @@
 -   calculate mathematical expression
 
 ```js
-/calc
+/calc 9*9-1
 ```
 
 -   check latency with server
@@ -23,5 +23,5 @@
 -   role a dice
 
 ```js
-/dice
+/dice 2
 ```
