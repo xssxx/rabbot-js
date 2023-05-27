@@ -10,7 +10,6 @@ class Bot extends Client {
             intents: [
                 GatewayIntentBits.Guilds,
                 GatewayIntentBits.GuildMembers,
-                GatewayIntentBits.MessageContent,
                 GatewayIntentBits.GuildMessageReactions,
                 GatewayIntentBits.GuildMessages,
             ],
@@ -33,7 +32,15 @@ class Bot extends Client {
         });
 
         this.on(Events.InteractionCreate, async (interaction) => {
-            if (!interaction.isChatInputCommand()) return;
+            // console.log(interaction);
+
+            if (
+                !(
+                    interaction.isChatInputCommand() ||
+                    interaction.isUserContextMenuCommand()
+                )
+            )
+                return;
 
             const command = this.commands.get(interaction.commandName);
 
@@ -43,7 +50,7 @@ class Bot extends Client {
                 await command.execute(client, interaction);
             } catch (error) {
                 console.error(error);
-                // interaction.deleteReply();
+                interaction.deleteReply();
             }
         });
 
