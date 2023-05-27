@@ -25,3 +25,5 @@
 ```bash
 /dice 2
 ```
+
+-   report user
